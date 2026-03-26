@@ -33,18 +33,17 @@ Basic data manipulation and control flow
 
 Project Structure
 src/
-│
-├── main/
-│   └── Main.java
-│
-├── model/
-│   ├── Usuario.java
-│   └── Tarefa.java
-│
-└── service/
-    └── TarefaService.java
-⚙️ Getting Started
+
+main/
+    Main.java
+model/
+    Usuario.java
+    Tarefa.java
+service/
+    TarefaService.java
+    
 Prerequisites
+
 Java JDK 8 or higher installed
 Command line or terminal access
 Installation & Execution
