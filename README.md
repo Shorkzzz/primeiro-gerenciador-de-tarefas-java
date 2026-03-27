@@ -1,18 +1,86 @@
-## Getting Started
+Task Manager (Java)
+Overview
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+This project is a Task Management System developed in Java, designed to demonstrate core principles of Object-Oriented Programming (OOP) and clean code organization.
 
-## Folder Structure
+The application runs in a console environment and allows users to manage tasks efficiently through a simple and structured interface.
 
-The workspace contains two folders by default, where:
+Features
+Create new tasks
+List all tasks
+Mark tasks as completed
+Remove tasks
+Basic user handling (authentication logic)
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+Architecture & Design
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+The project follows a modular structure, separating responsibilities into distinct layers:
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+main → Application entry point and user interaction
+model → Domain entities (Usuario, Tarefa)
+service → Business logic and operations
 
-## Dependency Management
+This separation improves readability, maintainability, and scalability.
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+Concepts Applied
+
+Object-Oriented Programming (OOP)
+Encapsulation
+Separation of Concerns
+Layered Architecture
+Code organization using packages
+Basic data manipulation and control flow
+
+Project Structure
+src/
+
+main/
+    Main.java
+model/
+    Usuario.java
+    Tarefa.java
+service/
+    TarefaService.java
+    
+Prerequisites
+
+Java JDK 8 or higher installed
+Command line or terminal access
+Installation & Execution
+
+Clone the repository:
+
+git clone https://github.com/Shorkzzz/primeiro-gerenciador-de-tarefas-java.git
+
+Navigate to the project directory:
+
+cd primeiro-gerenciador-de-tarefas-java
+
+Compile the project:
+
+javac -d bin src/main/Main.java
+
+Run the application:
+
+java -cp bin main.Main
+
+Notes
+
+This project was built for educational purposes
+The application uses a console-based interface
+No external frameworks or libraries are required
+
+Future Improvements
+
+Data persistence (files or database integration)
+Graphical User Interface (GUI)
+Enhanced authentication system
+Unit testing implementation
+Codebase refactoring for scalability
+Author
+
+Developed as part of a continuous learning journey in software development, with a focus on building solid foundations in Java and OOP principles.
+
+License
+
+This project is open-source and available for study and improvement.
