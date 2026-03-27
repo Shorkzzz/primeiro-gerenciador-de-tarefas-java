@@ -1,40 +1,31 @@
 package service;
 
-import java.util.ArrayList;
 import model.Tarefa;
+import repository.RepositoryTarefas;
 
 public class TarefaService {
 
-    private ArrayList<Tarefa> tarefas = new ArrayList<>();
+    private RepositoryTarefas repo = new RepositoryTarefas();
 
-    public void addTarefa(String descricao){
-        tarefas.add(new Tarefa(descricao));
-
+    public void adicionar(String usuario, String descricao) {
+        repo.adicionar(usuario, new Tarefa(descricao));
     }
-    public void listarTarefas(){
-        if (tarefas.isEmpty()) {
-            System.out.println("Nenhuma tarefa cadastrada.");
-            return;
-            }
-            int i = 1;
-            for(Tarefa t: tarefas){
-               System.out.println(i + " - " + t.getDescricao() +
-                (t.isConcluida() ? " (Concluída)" : ""));
-                i++;
+
+    public void listar(String usuario) {
+        int i = 1;
+
+        for (Tarefa t : repo.listar(usuario)) {
+            System.out.println(i + " - " + t.getDescricao() +
+                (t.isConcluida() ? " [X]" : " [ ]"));
+            i++;
         }
+    }
 
+    public void concluir(String usuario, int indice) {
+        repo.listar(usuario).get(indice).setConcluida(true);
     }
-    public void concluirTarefa(int indice){
-        if (indice >= 0 && indice < tarefas.size()) {
-            tarefas.get(indice).marcarComoConcluida();
-        }else {
-            System.out.println("Índice inválido.");
-        }
 
+    public void remover(String usuario, int indice) {
+        repo.remover(usuario, indice);
     }
-    public void removerTarefa(int indice){
-        if (indice >=0 && indice < tarefas.size()) {
-            tarefas.remove(indice);
-    }
-}
 }

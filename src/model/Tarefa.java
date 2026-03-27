@@ -19,4 +19,7 @@ public class Tarefa {
     public void marcarComoConcluida() {
         this.concluida = true;
     }
+    public void setConcluida(boolean concluida) {
+    this.concluida = concluida;
+}
 }
